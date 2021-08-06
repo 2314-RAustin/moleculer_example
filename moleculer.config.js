@@ -26,10 +26,13 @@
  *  }
  */
 module.exports = {
+	port: process.env.PORT,
+	environment : process.env.ENVIRONMENT,
+	conn: process.env.MONGO_URI,
 	// Namespace of nodes to segment your nodes on the same network.
-	namespace: "",
+	namespace: "@!klsdmlksm8937892safjkn",
 	// Unique node identifier. Must be unique in a namespace.
-	nodeID: null,
+	nodeID: "gateway",
 	// Custom metadata store. Store here what you want. Accessing: `this.broker.metadata`
 	metadata: {},
 
