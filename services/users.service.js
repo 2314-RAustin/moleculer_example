@@ -37,18 +37,13 @@ module.exports = {
 				optional: true,
 				default: true,
 			},
-			// rol: {
-			// 	type: "objectID",
-			// 	ObjectID: ObjectId,
-			// },
+			rol: {
+				type: "objectID",
+				ObjectID: ObjectId,
+			},
 		},
 		populates: {
-			rol: {
-				action: "roles.get",
-				params: {
-					fields: ["_id",  "name"],
-				},
-			},
+			rol: "roles.get",
 		}
 	},
 	hooks: {},

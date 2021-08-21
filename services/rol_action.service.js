@@ -11,23 +11,19 @@ module.exports = {
 			"rol",
 			"action",
 		],
-		entityValidator:{
+		entityValidator: {
 			rol:{
 				type: "objectID",
-				ObjectId
+				ObjectID: ObjectId
 			},
 			action:{
 				type: "objectID",
-				ObjectId
+				ObjectID: ObjectId
 			}
 		},
 		populates: {
-			roles: {
-				action: "roles.get",
-			},
-			actions: {
-				action: "actions.get",
-			}
+			rol: "roles.get",
+			action: "actions.get",
 		}
 	}
 };

@@ -9,7 +9,7 @@ module.exports = {
 		fields: [
 			"_id",
 			"name",
-			"id_module",
+			"module",
 		],
 		entityValidator:{
 			name:{
@@ -24,12 +24,7 @@ module.exports = {
 			}
 		},
 		populates: {
-			modules: {
-				action: "modules.get",
-				params: {
-					fields: ["_id", "name"]
-				}
-			}
+			module: "modules.get"
 		}
 	},
 	hooks: {
