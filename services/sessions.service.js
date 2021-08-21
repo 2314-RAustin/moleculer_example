@@ -50,7 +50,7 @@ module.exports = {
 			},
 			user_id:{
 				type: "objectID",
-				ObjectId
+				ObjectId,
 			}
 		},
 		populates: {

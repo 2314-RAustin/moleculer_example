@@ -1,72 +1,57 @@
 "use strict";
 const mongoDBMixin = require("../mixins/db.mixin");
-const  { ObjectId } = require("mongodb");
+const { ObjectId } = require("mongodb");
 
 module.exports = {
 	name: "users",
 	mixins: [mongoDBMixin("users")],
 	settings: {
-		fields: [
-			"_id",
-			"name",
-			"email",
-			"user",
-			"password",
-			"active",
-			"id_rol"
-		],
-		entityValidator:{
-			name:{
+		fields: ["_id", "name", "email", "user", "password", "active", "rol"],
+		entityValidator: {
+			name: {
 				type: "string",
 				optional: false,
 				min: 3,
-				max: 20
+				max: 20,
 			},
-			email:{
+			email: {
 				type: "email",
 				optional: false,
 				min: 6,
-				max: 50
+				max: 50,
 			},
-			user:{
+			user: {
 				type: "string",
 				optional: false,
 				min: 3,
-				max: 30
+				max: 30,
 			},
-			password:{
+			password: {
 				type: "string",
 				optional: false,
 				min: 5,
-				max: 30
+				max: 30,
 			},
-			active:{
+			active: {
 				type: "boolean",
 				optional: true,
-				default: true
+				default: true,
 			},
-			id_rol:{
-				type: "objectID",
-				ObjectId
-			}
+			// rol: {
+			// 	type: "objectID",
+			// 	ObjectID: ObjectId,
+			// },
 		},
 		populates: {
-			roles: {
-				action: "users.get",
+			rol: {
+				action: "roles.get",
 				params: {
-					fields: ["_id", "name", "email", "user", "password", "id_rol", "active"]
-				}
-			}
+					fields: ["_id",  "name"],
+				},
+			},
 		}
-
 	},
-	hooks: {
-
-	},
-	actions: {
-
-	},
-	methods: {
-
-	}
+	hooks: {},
+	actions: {},
+	methods: {},
 };

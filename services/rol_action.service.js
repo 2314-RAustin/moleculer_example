@@ -8,15 +8,15 @@ module.exports = {
 	settings: {
 		fields: [
 			"_id",
-			"id_rol",
-			"id_action",
+			"rol",
+			"action",
 		],
 		entityValidator:{
-			id_rol:{
+			rol:{
 				type: "objectID",
 				ObjectId
 			},
-			id_action:{
+			action:{
 				type: "objectID",
 				ObjectId
 			}
@@ -24,23 +24,10 @@ module.exports = {
 		populates: {
 			roles: {
 				action: "roles.get",
-				params: ["_id", "name"]
 			},
 			actions: {
 				action: "actions.get",
-				params: {
-					fields: ["_id", "name", "id_module"]
-				}
 			}
 		}
-	},
-	hooks: {
-
-	},
-	actions: {
-
-	},
-	methods: {
-
 	}
 };
